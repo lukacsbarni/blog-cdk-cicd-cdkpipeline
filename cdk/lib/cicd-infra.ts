@@ -24,10 +24,10 @@ export class CicdInfraStack extends cdk.Stack {
         actionName: 'DownloadSources',
 
         // NOTE: Specify your source repository here.
-        owner: 'binxio',
+        owner: 'lukacsbarni',
         repo: 'blog-cdk-cicd-cdkpipeline',
-        oauthToken: cdk.SecretValue.secretsManager('/github.com/binxio', {
-          jsonField: 'token'
+        oauthToken: cdk.SecretValue.secretsManager('cicd', {
+          jsonField: 'cicd'
         }),
         output: sourceArtifact,
       }),
